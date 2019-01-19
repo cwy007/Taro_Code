@@ -61,7 +61,7 @@ class  Publish  extends   Component{
       let  {cataData}=this.props;
       let  {selectCata,topicinfo,isEdit}=this.state;
       return (<View  className='publish-topic'> 
-           <Input  value={isEdit?(topicinfo?topicinfo.title:''):''}  className='publish-topic-title' onInput={this.titleChange.bind(this)} placeholder='请输入你要发布的标题' />
+           <Input  type='text' value={isEdit?(topicinfo?topicinfo.title:''):''}  className='publish-topic-title' onInput={this.titleChange.bind(this)} placeholder='请输入你要发布的标题' />
            <Textarea value={isEdit?(topicinfo?topicinfo.content:''):''} className='publish-topic-content' onInput={this.contentChange.bind(this)} placeholder='请输入您要发布的内容' />
            <Picker onChange={this.changeCata.bind(this)} mode ='selector' range={cataData} rangeKey='value'>
               <View className='publish-topic-cata'>{selectCata?selectCata.value:'请选择'}</View>

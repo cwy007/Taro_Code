@@ -36,7 +36,7 @@ class  Login  extends   Component{
       return (<View className='login-body'>
              <Head />
              <View className='form'>
-             <Input  onInput={this.changeToken.bind(this)} className='access_input'  placeholder='请输入accesstoken' />
+             <Input  type='text'  onInput={this.changeToken.bind(this)} className='access_input'  placeholder='请输入accesstoken' />
              <Button onClick={this.loginToken.bind(this)} className='btn_login'>登录</Button>
              </View>
              </View>)
