@@ -1,6 +1,28 @@
-# Taro_Code
+## 安装
 
-# 首次启动 需安装依赖 根目录 npm install ,最好采用cnpm(淘宝镜像) 
-# 启动H5或者小程序命令 npm run dev:h5  npm run dev:weapp
+* 建议 采用 npm 设置淘宝镜像后 再进行安装 
 
-# 小程序预览需要下载微信开发者工具
+* ```bash 
+  # npm 设置淘宝镜像
+  $ npm config set registry https://registry.npm.taobao.org
+  ```
+
+* 设置完即可进行安装依赖(不建议采用cnpm)
+
+* ```bash
+  $ npm i
+  ```
+
+* 微信小程序启动 
+
+* ```bash
+  $ npm run dev:weapp
+  ```
+
+* h5启动
+
+* ```bash
+  $ npm run dev:h5
+  ```
+
+* 
