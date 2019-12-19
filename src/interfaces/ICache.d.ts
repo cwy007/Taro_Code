@@ -1,4 +1,4 @@
- export  interface IValue{
-    accesstoken?:string,
-    [propName:string]:any
+export interface IValue {
+    accesstoken?: string,
+    [propName: string]: any
 }

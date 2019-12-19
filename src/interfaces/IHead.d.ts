@@ -1,4 +1,4 @@
-export interface IHeadProps{
-    loginname:string,
-    avatar_url:string
+export interface IHeadProps {
+    loginname: string,
+    avatar_url: string
 }
