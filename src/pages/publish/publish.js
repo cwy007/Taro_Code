@@ -1,5 +1,5 @@
 import Taro, { Component } from '@tarojs/taro';
-import { Input, View, Text, Button, Picker, Textarea } from '@tarojs/components';
+import { Input, View, Button, Picker, Textarea } from '@tarojs/components';
 import { connect } from '@tarojs/redux';
 import { submitTopic, updateTopic } from '../../actions/topiclist';
 import './publish.less';

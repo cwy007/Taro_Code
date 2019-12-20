@@ -1,6 +1,5 @@
 import Taro, { Component } from '@tarojs/taro';
-import { View, Text, Button, Textarea } from '@tarojs/components';
-import { connect } from '@tarojs/redux';
+import { View, Button, Textarea } from '@tarojs/components';
 import './replycontent.less';
 class ReplyContent extends Component {
   btnOK() {

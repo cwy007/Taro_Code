@@ -1,4 +1,3 @@
-import TopicList from "../components/topiclist/topiclist";
 
 const TOPIC_STATE = {
     page: 1,

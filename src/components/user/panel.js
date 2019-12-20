@@ -1,5 +1,5 @@
 import Taro, { Component } from '@tarojs/taro';
-import { View, Text, Button, Image } from '@tarojs/components';
+import { View, Text, Image } from '@tarojs/components';
 import './panel.less';
 import { myTimeToLocal } from '../../utils/date';
 class Panel extends Component {

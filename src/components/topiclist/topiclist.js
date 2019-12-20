@@ -1,5 +1,5 @@
 import Taro, { Component } from '@tarojs/taro';
-import { ScrollView, View, Text, Button } from '@tarojs/components';
+import { ScrollView } from '@tarojs/components';
 import { connect } from '@tarojs/redux';
 import { getTopicList, getNextList } from '../../actions/topiclist';
 import Topic from './topic';

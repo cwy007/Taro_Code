@@ -1,6 +1,5 @@
 import Taro, { Component } from '@tarojs/taro';
 import { View, Text, Image } from '@tarojs/components';
-import { connect } from '@tarojs/redux';
 import { myTimeToLocal } from '../../utils/date'
 import './topic.less'
 class Topic extends Component {

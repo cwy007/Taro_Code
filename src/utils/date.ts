@@ -1,5 +1,5 @@
-export  function  myTimeToLocal(inputTime):string{
-	if(!inputTime && typeof inputTime !== 'number'){
+export function myTimeToLocal(inputTime): string {
+	if (!inputTime && typeof inputTime !== 'number') {
 		return '';
 	}
 	var localTime = '';
