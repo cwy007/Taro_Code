@@ -1,7 +1,10 @@
-import Taro, { Component } from '@tarojs/taro';
+import Taro from '@tarojs/taro';
+import  { Component } from 'react'
+
 import { View, Text, RichText, Image } from '@tarojs/components';
 import { myTimeToLocal } from '../../utils/date';
 import './topicinfo.less';
+
 class TopicInfo extends Component {
    getTitle(title) {
       return title;
@@ -10,7 +13,7 @@ class TopicInfo extends Component {
       this.props.onDelTopic && this.props.onDelTopic(topicinfo);
    }
    //编辑话题
-   editTopic(topicinfo) {
+   editTopic() {
       Taro.redirectTo({ url: '/pages/publish/publish?edit=1' });
    }
    render() {

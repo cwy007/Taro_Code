@@ -1,4 +1,5 @@
-import Taro, { Component } from '@tarojs/taro'
+import  { Component } from 'react'
+
 import { View } from '@tarojs/components'
 import './index.less'
 import Menu from '../../components/menu/menu';

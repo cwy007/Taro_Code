@@ -1,6 +1,9 @@
-import Taro, { Component } from '@tarojs/taro';
+import Taro from '@tarojs/taro';
+import  { Component } from 'react'
+
 import { View, Button, Textarea } from '@tarojs/components';
 import './replycontent.less';
+
 class ReplyContent extends Component {
   btnOK() {
     if (this.state.value) {

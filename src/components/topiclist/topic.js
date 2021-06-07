@@ -1,7 +1,10 @@
-import Taro, { Component } from '@tarojs/taro';
+import Taro from '@tarojs/taro';
+import  { Component } from 'react'
+
 import { View, Text, Image } from '@tarojs/components';
 import { myTimeToLocal } from '../../utils/date'
 import './topic.less'
+
 class Topic extends Component {
    //跳转到详情页
    goToDetail(topic) {

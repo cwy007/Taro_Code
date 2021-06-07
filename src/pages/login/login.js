@@ -1,9 +1,12 @@
-import Taro, { Component } from '@tarojs/taro';
+import Taro  from '@tarojs/taro';
+import  { Component } from 'react'
+
 import { View, Input, Button } from '@tarojs/components';
-import { connect } from '@tarojs/redux';
+import { connect } from 'react-redux';
 import Head from '../../components/head/head';
 import { accessUserToken } from '../../actions/user';
 import './login.less';
+
 @connect(function (store) {
     return { user: store.user }
 }, function (dispatch) {
@@ -14,9 +17,6 @@ import './login.less';
     }
 })
 class Login extends Component {
-    config = {
-        navigationBarTitleText: '登录'
-    }
     changeToken(event) {
         if (event && event.target) {
             this.setState({ token: event.target.value });
@@ -26,7 +26,7 @@ class Login extends Component {
     loginToken() {
         if (this.state.token) {
             if (this.props.accessUserToken) {
-                this.props.accessUserToken({ accesstoken: this.state.token }).then(result => {
+                this.props.accessUserToken({ accesstoken: this.state.token }).then(() => {
                     Taro.redirectTo({ url: '/pages/user/user' })
                 })
             }

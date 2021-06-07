@@ -1,7 +1,9 @@
-import Taro, { Component } from '@tarojs/taro';
+import  { Component } from 'react'
+
 import { View, Image, Text } from '@tarojs/components';
 import { IHeadProps } from '../../interfaces/IHead';
 import './head.less';
+
 class Head extends Component<IHeadProps, {}>{
    render() {
       let { loginname, avatar_url } = this.props;

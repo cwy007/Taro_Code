@@ -1,8 +1,9 @@
-import Taro, { Component } from '@tarojs/taro';
+import  { Component } from 'react'
 import { ScrollView } from '@tarojs/components';
-import { connect } from '@tarojs/redux';
+import { connect } from 'react-redux';
 import { getTopicList, getNextList } from '../../actions/topiclist';
 import Topic from './topic';
+
 @connect(function (store) {
    return { ...store.topiclist, currentCata: store.menu.currentCata }
 }, function (dispatch) {
@@ -29,8 +30,8 @@ class TopicList extends Component {
    render() {
       let { list } = this.props;
       return (
-         <ScrollView style={{ height: '650PX' }} onScrollToLower={this.onScrollToLower.bind(this)} scrollY={true} >{
-            list.map((item) => <Topic item={item} />)
+         <ScrollView style={{ height: '650PX' }} onScrollToLower={this.onScrollToLower.bind(this)} scrollY >{
+            list.map((item, index) => <Topic item={item} key={index} />)
          }</ScrollView>
       )
    }

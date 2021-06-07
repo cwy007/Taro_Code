@@ -1,5 +1,5 @@
 {
-  "miniprogramRoot": "./dist",
+  "miniprogramRoot": "./",
   "projectname": "taronode",
   "description": "",
   "appid": "touristappid",

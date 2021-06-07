@@ -1,10 +1,14 @@
-import Taro, { Component } from '@tarojs/taro';
+import Taro from '@tarojs/taro';
+import  { Component } from 'react'
+
 import { View, Text, Image } from '@tarojs/components';
-import { connect } from '@tarojs/redux';
+import { connect } from 'react-redux';
 import { showDrawer, changeCata, hideDrawer } from '../../actions/menu';
+// eslint-disable-next-line import/first
 import { AtDrawer } from 'taro-ui';
 import { validateUser } from '../../actions/user';
 import './menu.less';
+
 @connect(function (store) {
   return { ...store.menu, user: store.user }
 }, function (dispatch) {
@@ -54,8 +58,8 @@ class Menu extends Component {
     let items = this.getItems(cataData);//获取分类列表
     return (
       <View className='topiclist-menu'>
-        <AtDrawer onClose={this.closeDrawer.bind(this)} onItemClick={this.clickCata.bind(this)} style='position:absolute;' show={showDrawer} items={items} />
-        <Image onClick={this.showDrawer.bind(this)} className='image  left' src={require('../../assets/img/cata.png')} />
+        <AtDrawer onClose={this.closeDrawer.bind(this)} onItemClick={this.clickCata.bind(this)}  show={showDrawer} items={items} />
+        <Image onClick={this.showDrawer.bind(this)} className='image  left' src={require('../../assets/img/cata.png')} style='position:absolute;' />
         <Text>{this.props.currentCata ? this.props.currentCata.value : ''}</Text>
         <Image onClick={this.toUser.bind(this)} className='image right' src={require('../../assets/img/login.png')} />
       </View>)

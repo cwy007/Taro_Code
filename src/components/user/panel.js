@@ -1,7 +1,10 @@
-import Taro, { Component } from '@tarojs/taro';
+import Taro from '@tarojs/taro';
+import  { Component } from 'react'
+
 import { View, Text, Image } from '@tarojs/components';
 import './panel.less';
 import { myTimeToLocal } from '../../utils/date';
+
 class Panel extends Component {
    toDetail(item) {
       Taro.navigateTo({ url: '/pages/detail/index?topicid=' + item.id })

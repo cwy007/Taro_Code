@@ -1,6 +1,8 @@
-import Taro, { Component } from '@tarojs/taro';
+import  { Component } from 'react'
+import { getCurrentInstance } from '@tarojs/taro'
+
 import { View, Button } from '@tarojs/components';
-import { connect } from '@tarojs/redux';
+import { connect } from 'react-redux';
 import { validateUser } from '../../actions/user';
 import { getTopicInfo, admireTopic, replyContent } from '../../actions/topiclist';
 import TopicInfo from '../../components/topicinfo/topicinfo';
@@ -8,6 +10,7 @@ import Replies from '../../components/topicinfo/replies';
 import ReplyContent from '../../components/topicinfo/replycontent';
 import './detail.less';
 import { IDetailProps, IDetailState } from '../../interfaces/IDetail';
+
 @connect(function (store): IDetailProps {
   return { getTopicInfo, admireState: store.topiclist.admireState, user: store.user, topicinfo: store.topiclist.topicinfo, replies: store.topiclist.replies }
 }, function (dispatch) {
@@ -18,18 +21,19 @@ import { IDetailProps, IDetailState } from '../../interfaces/IDetail';
   }
 })
 class Detail extends Component<IDetailProps, IDetailState>{
-  config = {
-    navigationBarTitleText: '话题详情'
-  }
+  
   state: IDetailState = {
     showReplyContent: false //显示回复组件
   }
+  $instance = getCurrentInstance()
+
   componentWillMount() {
     this.getDetail();
   }
   getDetail() {
     let { user } = this.props;
-    let params = { id: this.$router.params.topicid, mdrender: true, accesstoken: user.accesstoken }
+
+    let params = { id: this.$instance.router.params.topicid, mdrender: true, accesstoken: user.accesstoken }
     this.props.getTopicInfo && this.props.getTopicInfo(params)
   }
   admire(reply) {
@@ -83,7 +87,7 @@ class Detail extends Component<IDetailProps, IDetailState>{
       <View className='detail'>
         {showReplyContent ? <ReplyContent onOKReplyContent={this.ReplyContentValue.bind(this)} onCancelReplyContent={this.closeReplyContent.bind(this)} /> : null}
         <TopicInfo selfPublish={selfPublish} topicinfo={topicinfo} />
-        < Replies user={user} onReplyToReply={this.replyToReply.bind(this)} replies={replies} onAdmire={this.admire.bind(this)} />
+        <Replies user={user} onReplyToReply={this.replyToReply.bind(this)} replies={replies} onAdmire={this.admire.bind(this)} />
         <Button className='replyBtn' onClick={this.Reply.bind(this)}>回复</Button>
       </View>)
   }

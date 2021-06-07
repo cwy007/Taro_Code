@@ -1,32 +1,17 @@
-import Taro, { Component } from '@tarojs/taro'
-import { Provider } from '@tarojs/redux'
+import   { Component } from 'react'
 
-import Index from './pages/index/index'
+import { Provider } from 'react-redux'
 
 import configStore from './store'
-import '@tarojs/async-await'
 
 import './app.less'
+import 'taro-ui/dist/style/index.scss' // 全局引入一次即可
+
 
 const store = configStore()
 
 class App extends Component {
 
-  config = {
-    pages: [
-      'pages/index/index',
-      'pages/detail/index',
-      'pages/login/login',
-      'pages/user/user',
-      'pages/publish/publish',
-    ],
-    window: {
-      backgroundTextStyle: 'light',
-      navigationBarBackgroundColor: '#fff',
-      navigationBarTitleText: 'WeChat',
-      navigationBarTextStyle: 'black'
-    }
-  }
 
   componentDidMount() { }
 
@@ -38,13 +23,14 @@ class App extends Component {
 
   componentCatchError() { }
 
-  render() {
+  render () {
     return (
       <Provider store={store}>
-        <Index />
+        {this.props.children}
       </Provider>
     )
   }
 }
+export default App
 
-Taro.render(<App />, document.getElementById('app'))
+

@@ -1,10 +1,13 @@
-import Taro, { Component } from '@tarojs/taro';
+import Taro from '@tarojs/taro';
+import  { Component } from 'react'
+
 import { View, Button } from '@tarojs/components';
-import { connect } from '@tarojs/redux';
+import { connect } from 'react-redux';
 import Head from '../../components/head/head';
 import Panel from '../../components/user/panel';
 import { getUserInfo } from '../../actions/user';
 import './user.less';
+
 @connect(function (store) {
     return { ...store.user }
 })

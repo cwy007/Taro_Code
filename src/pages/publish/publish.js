@@ -1,8 +1,11 @@
-import Taro, { Component } from '@tarojs/taro';
+import Taro from '@tarojs/taro';
+import  { Component } from 'react'
+
 import { Input, View, Button, Picker, Textarea } from '@tarojs/components';
-import { connect } from '@tarojs/redux';
+import { connect } from 'react-redux';
 import { submitTopic, updateTopic } from '../../actions/topiclist';
 import './publish.less';
+
 @connect(function (store) {
    return { ...store.menu, ...store.user, topicinfo: store.topiclist.topicinfo }
 })

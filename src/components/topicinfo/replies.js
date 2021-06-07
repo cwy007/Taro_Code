@@ -1,8 +1,10 @@
-import Taro, { Component } from '@tarojs/taro';
+import  { Component } from 'react'
+
 import { View, Text, Image, RichText } from '@tarojs/components';
 import { myTimeToLocal } from '../../utils/date';
 import './replies.less'
 import { validateUser } from '../../actions/user';
+
 const isweapp = process.env.TARO_ENV == "weapp"  //小程序环境
 class Replies extends Component {
    admire(reply) {
