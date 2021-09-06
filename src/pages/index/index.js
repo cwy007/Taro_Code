@@ -1,37 +1,36 @@
-import  { Component } from 'react'
+import { Component } from "react";
 
-import { View } from '@tarojs/components'
-import './index.less'
-import Menu from '../../components/menu/menu';
-import TopicList from '../../components/topiclist/topiclist';
+import { View } from "@tarojs/components";
+import "./index.less";
+import Menu from "../../components/menu/menu";
+import TopicList from "../../components/topiclist/topiclist";
 
 class Index extends Component {
-
   config = {
-    navigationBarTitleText: '首页'
-  }
+    navigationBarTitleText: "首页",
+  };
+
+  componentDidMount() {}
 
   componentWillReceiveProps(nextProps) {
-    console.log(this.props, nextProps)
+    console.log(this.props, nextProps);
   }
 
-  componentWillUnmount() {
-  }
-  componentDidMount() {
+  componentWillUnmount() {}
 
-  }
-  componentDidShow() { }
+  componentDidShow() {}
 
-  componentDidHide() { }
+  componentDidHide() {}
 
   render() {
     return (
-      <View className='index'>
+      <View className="index">
         <Menu />
+
         <TopicList />
       </View>
-    )
+    );
   }
 }
 
-export default Index
+export default Index;
