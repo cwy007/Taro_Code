@@ -61,29 +61,32 @@ class Menu extends Component {
       }
     });
   }
+
   render() {
-    let { showDrawer, cataData } = this.props;
+    console.log("this.props", this.props);
+    let { showDrawer: showDrawerBoolean, cataData } = this.props;
     let items = this.getItems(cataData); //获取分类列表
+
     return (
-      <View className='topiclist-menu'>
+      <View className="topiclist-menu">
         <AtDrawer
           onClose={this.closeDrawer.bind(this)}
           onItemClick={this.clickCata.bind(this)}
-          show={showDrawer}
+          show={showDrawerBoolean}
           items={items}
         />
         <Image
           onClick={this.showDrawer.bind(this)}
-          className='image  left'
+          className="image  left"
           src={require("../../assets/img/cata.png")}
-          style='position:absolute;'
+          style="position:absolute;"
         />
         <Text>
           {this.props.currentCata ? this.props.currentCata.value : ""}
         </Text>
         <Image
           onClick={this.toUser.bind(this)}
-          className='image right'
+          className="image right"
           src={require("../../assets/img/login.png")}
         />
       </View>
