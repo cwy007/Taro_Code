@@ -19,6 +19,7 @@ import Topic from "./topic";
     };
   }
 )
+
 class TopicList extends Component {
   componentWillMount() {
     let { page, limit, currentCata } = this.props;

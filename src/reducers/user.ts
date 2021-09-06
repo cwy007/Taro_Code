@@ -3,6 +3,7 @@ import { setCahce, getCache } from "../utils/cache";
 const cacheKey = "cnode-user-key";
 const user_cache = getCache(cacheKey) ? getCache(cacheKey) : {}; //读取缓存
 const USER_STATE = { ...user_cache };
+
 export default function user(prestate = USER_STATE, action) {
   switch (action.type) {
     case "loginSuccess":
