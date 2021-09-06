@@ -1,36 +1,25 @@
-import   { Component } from 'react'
+import { Component } from "react";
 
-import { Provider } from 'react-redux'
+import { Provider } from "react-redux";
 
-import configStore from './store'
+import configStore from "./store";
 
-import './app.less'
-import 'taro-ui/dist/style/index.scss' // 全局引入一次即可
+import "./app.less";
+import "taro-ui/dist/style/index.scss"; // 全局引入一次即可
 
-
-const store = configStore()
+const store = configStore();
 
 class App extends Component {
+  componentDidMount() {}
 
+  componentDidShow() {}
 
-  componentDidMount() { }
+  componentDidHide() {}
 
-  componentDidShow() {
+  componentCatchError() {}
 
-  }
-
-  componentDidHide() { }
-
-  componentCatchError() { }
-
-  render () {
-    return (
-      <Provider store={store}>
-        {this.props.children}
-      </Provider>
-    )
+  render() {
+    return <Provider store={store}>{this.props.children}</Provider>;
   }
 }
-export default App
-
-
+export default App;
